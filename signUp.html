@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TheLast</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="./assets/css/base.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
+    <link rel="stylesheet" href="./assets/font/themify-icons/themify-icons.css">
+    <link rel="stylesheet" href="/items.html">
+
+</head>
+<body>
+    <div class="main__forgot-password">
+        <div class="grid">
+            <div class="container-fp">
+                <div class="container-fb__list">
+                    <h1>Đăng ký</h1>
+                    <p>Tên đăng nhập</p>
+                    <input class="input-signup-username" type="text" placeholder="Tên đăng nhập">
+                    <p>Số điện thoại</p>
+                    <input type="text" placeholder="SĐT">
+                    <p>Mật khẩu</p>
+                    <input class="input-signup-password" type="password" placeholder="Mật khẩu">
+                    <p>Nhập lại mật khẩu</p>
+                    <input type="password" placeholder="Nhập lại mật khẩu">
+
+                    <!-- captcha -->
+                    <p>Mã captcha</p>
+                    <section class="captcha-forgot">
+                        <ul class="code">
+                          <li tabindex="0" class="digit">
+                            <span>0</span>
+                          </li>
+                          <li tabindex="0" class="digit">
+                            <span>3</span>
+                          </li>
+                          <li tabindex="0" class="digit">
+                            <span>4</span>
+                          </li>
+                          <li tabindex="0" class="digit">
+                            <span>8</span>
+                          </li>
+                          <li tabindex="0" class="digit">
+                            <span>7</span>
+                          </li>
+                          <li tabindex="0" class="digit">
+                            <span>2</span>
+                          </li>
+                        </ul>
+                    </section>
+                    <p>Nhập captcha</p>
+                    <input type="text" placeholder="Captcha">
+
+                    <a href="https://sungga.github.io/sungga/#0"><button class="btn signup__signInButton">Đăng ký</button></a>
+                    <p><a href="https://sungga.github.io/sungga/index.html?page=login">Quay lại đăng nhập</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+  // validation form register and register user local storage
+const inputUsernameRegister = document.querySelector(".input-signup-username");
+const inputPasswordRegister = document.querySelector(".input-signup-password");
+const btnRegister = document.querySelector(".signup__signInButton");
+
+// validation form register and register user local storage
+
+btnRegister.addEventListener("click", (e) => {
+  e.preventDefault();
+  if (
+    inputUsernameRegister.value === "" ||
+    inputPasswordRegister.value === ""
+  ) {
+    alert("vui lòng không để trống");
+  } else {
+    // array user
+    const user = {
+      username: inputUsernameRegister.value,
+      password: inputPasswordRegister.value,
+    };
+    let json = JSON.stringify(user);
+    localStorage.setItem(inputUsernameRegister.value, json);
+    alert("Đăng Ký Thành Công");
+    window.location.href = "https://sungga.github.io/sungga/index.html";
+  }
+});
+
+</script>
+</html>

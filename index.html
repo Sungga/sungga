@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TheLast</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="./assets/css/base.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
+    <link rel="stylesheet" href="./assets/font/themify-icons/themify-icons.css">
+    <link rel="stylesheet" href="/items.html">
+
+</head>
+<body>
+    <div id="background-login">
+        <video class="background-video" src="./assets/video/video_background.mp4" autoplay loop muted></video>
+        <div class="login">
+            <p class="login__title">Đăng nhập</p>
+            <p class="login__title-input">Tài khoản</p>
+            <input type="text" class="login__input input-login-username" placeholder="Tài khoản">
+            <p class="login__title-input">Mật khẩu</p>
+            <input type="password" class="login__input input-login-password" placeholder="Mật khẩu">
+            <a class="login__href-btn" href="https://sungga.github.io/sungga/home.html">
+                <button class="btn login__btn login__signInButton">Đăng nhập</button>
+            </a>
+            <p class="login__bottom">Bạn <a href="https://sungga.github.io/sungga/forgotPassword.html">quên mật khẩu?</a></p>
+            <p class="login__bottom">Nếu chưa có tài khoản, hãy <a href="https://sungga.github.io/sungga/signUp.html">đăng ký!</a></p>
+        </div>
+        <div class="title-login">TOP CV</div>
+    </div>
+
+</body>
+
+<script>
+
+
+// validation form login
+const inputUsername = document.querySelector(".input-login-username");
+const inputPassword = document.querySelector(".input-login-password");
+const btnLogin = document.querySelector(".login__signInButton");
+
+// validation form login
+
+btnLogin.addEventListener("click", (e) => {
+  e.preventDefault();
+  if (inputUsername.value === "" || inputPassword.value === "") {
+    alert("vui lòng không để trống");
+  } else {
+    const user = JSON.parse(localStorage.getItem(inputUsername.value));
+    if (
+      user.username === inputUsername.value &&
+      user.password === inputPassword.value
+    ) {
+      alert("Đăng Nhập Thành Công");
+      window.location.href = "https://sungga.github.io/sungga/home.html";
+    } else {
+      alert("Đăng Nhập Thất Bại");
+    }
+  }
+});
+</script>
+
+</html>
