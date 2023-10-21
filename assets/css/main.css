@@ -499,7 +499,7 @@ p {
     width: 100%;
     padding-top: 50%;
     margin-top: var(--header-height);
-    background: url('/assets/img/bong.jpg') top center / cover no-repeat;
+    background: url('https://sungga.github.io/sungga/assets/img/bong.jpg') top center / cover no-repeat;
     position: relative;
 }
 
